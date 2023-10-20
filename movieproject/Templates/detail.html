@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{movf.img.url}}" width="300" height="250">
+        </div>
+
+        <div class="col-md-6">
+            <div class="card text-white bg-secondary mb-3" >
+                <h4>Movie Name : {{  movf.name}}</h4>
+                  <h5>About Movie : {{  movf.desc}}</h5>
+                <h6>Releasing Year : {{  movf.year}}</h6>
+
+            <a class="btn btn-warning" href="{% url 'movieapp:update' movf.id %}">Update</a>
+                <a class="btn btn-danger" href="{% url 'movieapp:delete' movf.id %}">Delete</a>
+        </div>
+       </div>
+    </div>
+</div>
+
+{% endblock %}
